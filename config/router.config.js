@@ -44,6 +44,7 @@ export default [
             name: 'workplace',
             component: './Dashboard/Workplace',
           },
+
         ],
       },
       // forms
@@ -147,6 +148,11 @@ export default [
             path: '/profile/basic',
             name: 'basic',
             component: './Profile/BasicProfile',
+          },
+          {
+            path: '/profile/usermanagement',
+            name: 'usermanagement',
+            component: './Profile/Manage',
           },
           {
             path: '/profile/advanced',

@@ -1,8 +1,7 @@
-
-import { queryHomeDec,queryBasicProfile, queryAdvancedProfile } from '@/services/api';
+import { queryBasicProfile, queryAdvancedProfile } from '@/services/api';
 
 export default {
-  namespace: 'home',
+  namespace: 'manage',
 
   state: {
     basicGoods: [],

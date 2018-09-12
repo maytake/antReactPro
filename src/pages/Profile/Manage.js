@@ -8,11 +8,11 @@ import PageHeaderWrapper from '@/components/PageHeaderWrapper';
     profile,
     
   }))
-class Home extends PureComponent {
+class Manage extends PureComponent {
   componentDidMount(){
     const { dispatch } = this.props;
     dispatch({
-      type: 'home/fetchBasic',
+      type: 'profile/fetchBasic',
     });
   }
   render() {
@@ -32,4 +32,4 @@ class Home extends PureComponent {
     );
   }
 }
-export default Home
+export default Manage

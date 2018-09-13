@@ -1,38 +1,29 @@
 
-import { queryHomeDec,queryBasicProfile, queryAdvancedProfile } from '@/services/api';
+import { queryHomeDec } from '@/services/api';
 
 export default {
   namespace: 'home',
 
   state: {
-    basicGoods: [],
-    advancedOperation1: [],
-    advancedOperation2: [],
-    advancedOperation3: [],
+    Introduction: []
   },
 
   effects: {
     *fetchBasic(_, { call, put }) {
-      const response = yield call(queryBasicProfile);
+      const response = yield call(queryHomeDec);
       yield put({
         type: 'show',
-        payload: response,
+        payload: response
       });
     },
-    *fetchAdvanced(_, { call, put }) {
-      const response = yield call(queryAdvancedProfile);
-      yield put({
-        type: 'show',
-        payload: response,
-      });
-    },
+
   },
 
   reducers: {
-    show(state, { payload }) {
+    show(state, {payload}) {
       return {
         ...state,
-        ...payload,
+        Introduction:payload
       };
     },
   },

@@ -114,7 +114,7 @@ class HeaderView extends PureComponent {
         style={{ padding: 0, width: this.getHeadWidth() }}
         className={fixedHeader ? styles.fixedHeader : ''}
       >
-        {isTop && !isMobile ? (
+        { !isMobile ? (
           <TopNavHeader
             theme={navTheme}
             mode="horizontal"

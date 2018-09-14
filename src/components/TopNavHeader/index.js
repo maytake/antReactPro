@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
-import Link from 'umi/link';
 import RightContent from '../GlobalHeader/RightContent';
-import BaseMenu from '../SiderMenu/BaseMenu';
+import BaseTopMenu from '../SiderMenu/BaseTopMenu';
 import styles from './index.less';
 
 export default class TopNavHeader extends PureComponent {
@@ -37,7 +36,7 @@ export default class TopNavHeader extends PureComponent {
                 maxWidth,
               }}
             >
-              <BaseMenu {...this.props} style={{ border: 'none', height: 64, lineHeight: '64px' }} />
+              <BaseTopMenu {...this.props} style={{ border: 'none', height: 64, lineHeight: '64px' }} />
             </div>
           </div>
           <RightContent {...this.props} />

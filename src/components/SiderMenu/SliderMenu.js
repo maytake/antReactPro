@@ -17,6 +17,7 @@ const getDefaultCollapsedSubMenus = props => {
     location: { pathname },
     flatMenuKeys,
   } = props;
+
   return urlToList(pathname)
     .map(item => getMenuMatches(flatMenuKeys, item)[0])
     .filter(item => item);

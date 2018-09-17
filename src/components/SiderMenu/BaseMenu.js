@@ -34,6 +34,7 @@ export default class BaseMenu extends PureComponent {
   /**
    * Recursively flatten the data
    * [{path:string},{path:string}] => {path,path2}
+   * ["/dashboard/analysis","/dashboard/monitor"]
    * @param  menus
    */
   getFlatMenuKeys(menus) {
@@ -65,7 +66,11 @@ export default class BaseMenu extends PureComponent {
       .filter(item => item);
   };
 
-  // Get the currently selected menu
+
+  /**
+   *  Get the currently selected menu .pop() => ["/dashboard/monitor"] => "/dashboard/monitor"
+   * urlToList  take "/dashboard/monitor" turn into ["/dashboard/", "/dashboard/monitor"]
+   */
   getSelectedMenuKeys = () => {
     const {
       location: { pathname },
@@ -74,7 +79,8 @@ export default class BaseMenu extends PureComponent {
   };
 
   /**
-   * get SubMenu or Item
+   * get SubMenu or Item  
+   * formatMessage => chinese
    */
   getSubMenuOrItem = item => {
     // doc: add hideChildrenInMenu

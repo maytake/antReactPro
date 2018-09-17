@@ -128,3 +128,7 @@ export async function getFakeCaptcha(mobile) {
 export async function queryHomeDec() {
   return request('/home/dec');
 }
+
+export async function queryRoutes() {
+  return request('/api/routes');
+}

@@ -1,9 +1,5 @@
 const menus = [
-  {
-    path: '/home',
-    name: 'home',
-    icon: 'home',
-  },
+
   {
     path: '/dashboard',
     name: 'dashboard',

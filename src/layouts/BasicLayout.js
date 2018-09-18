@@ -132,6 +132,13 @@ class BasicLayout extends React.PureComponent {
     return formatter(menuData);
   }
 
+/*   getMenuData() {
+    const {
+      route: { routes },
+    } = this.props;
+    return formatter(routes);
+  } */
+
   /**
    * 获取面包屑映射
    * @param {Object} menuData 菜单配置

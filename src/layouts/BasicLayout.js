@@ -233,6 +233,9 @@ class BasicLayout extends React.PureComponent {
     const { rendering, isMobile } = this.state;
     const isTop = PropsLayout === 'topmenu';
     const menuData = this.getMenuData();
+    if(menuData.length===0){
+      return null; 
+    }
     const layout = (
       <Layout>
         {isTop && !isMobile ? null : (

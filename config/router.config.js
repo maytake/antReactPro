@@ -20,17 +20,18 @@ export default [
     routes: [
       // dashboard
       { path: '/', redirect: '/dashboard/analysis' },
-      {
-        path: '/home',
-        name: 'home',
-        icon: 'home',
-        component: './Home/Home',
-      },
+      
       {
         path: '/dashboard',
         name: 'dashboard',
         icon: 'dashboard',
         routes: [
+          {
+            path: '/dashboard/home',
+            name: 'home',
+            icon: 'home',
+            component: './Home/Home',
+          },
           {
             path: '/dashboard/analysis',
             name: 'analysis',

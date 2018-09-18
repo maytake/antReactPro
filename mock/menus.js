@@ -6,6 +6,10 @@ const menus = [
     icon: 'dashboard',
     routes: [
       {
+        path: '/dashboard/home',
+        name: 'home',
+      },
+      {
         path: '/dashboard/analysis',
         name: 'analysis',
       },

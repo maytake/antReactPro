@@ -92,6 +92,9 @@ class BasicLayout extends React.PureComponent {
     dispatch({
       type: 'setting/getSetting',
     });
+    dispatch({
+      type: 'menu/fetchMenu',
+    });
     this.renderRef = requestAnimationFrame(() => {
       this.setState({
         rendering: false,
@@ -125,10 +128,8 @@ class BasicLayout extends React.PureComponent {
   }
 
   getMenuData() {
-    const {
-      route: { routes },
-    } = this.props;
-    return formatter(routes);
+    const {menuData} = this.props;
+    return formatter(menuData);
   }
 
   /**
@@ -233,9 +234,10 @@ class BasicLayout extends React.PureComponent {
             Authorized={Authorized}
             theme={navTheme}
             onCollapse={this.handleMenuCollapse}
-            menuData={menuData}
+            
             isMobile={isMobile}
             {...this.props}
+            menuData={menuData}
           />
         )}
         <Layout
@@ -245,11 +247,12 @@ class BasicLayout extends React.PureComponent {
           }}
         >
           <Header
-            menuData={menuData}
+          
             handleMenuCollapse={this.handleMenuCollapse}
             logo={logo}
             isMobile={isMobile}
             {...this.props}
+            menuData={menuData}
           />
           <Content style={this.getContentStyle()}>{children}</Content>
           <Footer />
@@ -275,7 +278,9 @@ class BasicLayout extends React.PureComponent {
   }
 }
 
-export default connect(({ global, setting }) => ({
+export default connect(({ global, menu,setting,loading }) => ({
+  loading: loading.effects['menu/fetchMenu'],
+  menuData:menu.menuData,
   collapsed: global.collapsed,
   layout: setting.layout,
   ...setting,

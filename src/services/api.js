@@ -130,5 +130,5 @@ export async function queryHomeDec() {
 }
 
 export async function queryRoutes() {
-  return request('/api/routes');
+  return request('/api/menus');
 }

@@ -49,6 +49,7 @@ export default {
     },
     address: '西湖区工专路 77 号',
     phone: '0752-268888888',
+    token: 'ebde19eaf',
   },
   // GET POST 可省略
   'GET /api/users': [
@@ -133,5 +134,17 @@ export default {
       message: 'Unauthorized',
       path: '/base/category/list',
     });
+  },
+  'GET /api/token': (req, res) => {
+    res.send({
+      "resultId": 0,
+      "resultMsg": "请求成功",
+      "resultData": {
+          "member_name": "gaoxp_2",
+          "avatar": "", 
+          "member_uuid": "johnption_2", 
+          "token": "ebde19eaf" 
+      }
+  });
   },
 };

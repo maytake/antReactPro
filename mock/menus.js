@@ -8,10 +8,12 @@ const menus = [
       {
         path: '/dashboard/home',
         name: 'home',
+        authority: 'admin',
       },
       {
         path: '/dashboard/analysis',
         name: 'analysis',
+        authority: 'admin',
       },
       {
         path: '/dashboard/monitor',
